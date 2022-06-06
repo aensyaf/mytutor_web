@@ -1,0 +1,118 @@
+.w3-grid-template {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media screen and (max-width: 1000px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .resimg {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .resimg {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .resimg {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .resimg {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .background{
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+        width: 100%;
+    }
+    .header-text{
+        font-weight:bold;
+        font-size:45px;
+        text-align:center;
+        color:white;
+        margin:100px;
+    }
+    .line{
+        background-color: white; width:30%; margin: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .background{
+        background-color: white;
+    }
+    .header-text{
+        font-weight:bold;
+        font-size:45px;
+        text-align:center;
+        color:black;
+        margin:100px;
+    }
+    .line{
+        background-color: black; width:30%; margin: auto;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .backgroundtut{
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannertutors.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .backgroundtut{
+        background-color: white;
+    }
+    .header-texttut{
+        font-weight:bold;
+        font-size:45px;
+        text-align:center;
+        color:black;
+        margin:100px;
+    }
+    .linetut{
+        background-color: black; width:30%; margin: auto;
+    }
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: regular;
+    font-size: 10px;
+}

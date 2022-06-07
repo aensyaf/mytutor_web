@@ -1,10 +1,4 @@
 <?php
-   session_start();
-   if(!isset($_SESSION['sessionid'])){
-       echo "<script>alert('Session not available. Please register again');</script>";
-       echo "<script> window.location.replace('../php/login.php')</script>";
-   }
-   
    if (isset($_POST['submit'])) {
       include_once("dbconnect.php");
       $name = $_POST["name"];

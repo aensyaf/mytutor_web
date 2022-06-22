@@ -1,0 +1,140 @@
+.w3-grid-template {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media screen and (min-width: 600px) {
+    .resimg {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .resimg {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .resimg {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .resimg {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .w3-grid-template {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .resimg {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .w3-grid-template{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .resimg {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannercourses.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+.header-text{
+    font-weight:bold;
+    font-size:50px;
+    text-align:center;
+    color:white;
+    padding:32px;
+}
+
+.header-line{
+    background-color: white;
+    width:30%; margin: auto;
+    height: 3px;
+}
+
+.header-text2{
+    font-weight:normal;
+    font-size:16px;
+    text-align:center;
+    color:white;
+}
+
+.header-det{
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 40px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.4em;
+    color: #FFFFFF;
+    margin-bottom:16px; padding-top:24px
+}
+
+.box-details{
+    border: 5px solid white;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: regular;
+    font-size: 10px;
+}

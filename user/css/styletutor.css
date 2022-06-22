@@ -3,13 +3,47 @@
     grid-template-columns: repeat(5, 1fr);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 600px) {
+    .resimg-tut {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannertutors.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 1500px) {
     .w3-grid-template-tut {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
     .resimg-tut {
-        width: 70%;
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannertutors.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .w3-grid-template-tut {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .resimg-tut {
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannertutors.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
     }
 }
 
@@ -19,7 +53,13 @@
         grid-template-columns: repeat(3, 1fr);
     }
     .resimg-tut {
-        width: 70%;
+        width: 100%;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannertutors.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
     }
 }
 
@@ -30,59 +70,70 @@
     }
     .resimg-tut {
         width: 100%;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .w3-grid-template-tut {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .resimg-tut {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 600px) {
-    .backgroundtut{
         background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
             url("../images/bannertutors.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
         height: 50%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .w3-grid-template-tut{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .resimg-tut {
         width: 100%;
-    }
-    .header-texttut{
-        font-weight:bold;
-        font-size:45px;
-        text-align:center;
-        color:white;
-        margin:100px;
-    }
-    .linetut{
-        background-color: white; width:30%; margin: auto;
+        background-image:linear-gradient(to right, rgba(0,0,0,0.514), rgba(0,0,0,0.363), rgba(0,0,0,0.452)),
+            url("../images/bannertutors.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 50%;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .backgroundtut{
-        background-color: white;
-    }
-    .header-texttut{
-        font-weight:bold;
-        font-size:45px;
-        text-align:center;
-        color:black;
-        margin:100px;
-    }
-    .linetut{
-        background-color: black; width:30%; margin: auto;
-    }
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:140px;
+	right:140px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
 }
 
-.footer{
-    text-align: center;
+.my-float{
+	margin-top:22px;
+}
+
+.header-text-tut{
+    font-weight:bold;
+    font-size:50px;
+    text-align:center;
+    color:white;
+    padding:32px;
+}
+
+.header-line-tut{
+    background-color: white;
+    width:30%; margin: auto;
+    height: 3px;
+}
+
+.header-text2-tut{
+    font-weight:normal;
+    font-size:16px;
+    text-align:center;
+    color:white;
+}
+
+.footer-tut{
     background-color: black;
     color: white;
     padding: 10px;

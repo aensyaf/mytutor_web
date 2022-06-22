@@ -1,11 +1,24 @@
 <?php
+    error_reporting(0);
     session_start();
     if(!isset($_SESSION['sessionid'])){
         echo "<script>alert('Session not available. Please login again');</script>";
         echo "<script> window.location.replace('../php/login.php')</script>";
     }
     include_once("dbconnect.php");
-    $sqltutors = "SELECT * FROM tbl_tutors";
+
+    if(isset($_GET['submit'])){
+        $operation = $_GET['submit'];
+        if($operation == 'search'){
+            $search = $_GET['search'];
+            $option = $_GET['option'];
+            if($option == 'tutname'){
+                $sqltutors = "SELECT * FROM tbl_tutors WHERE tutor_name LIKE '%$search%'";
+            }else{
+                $sqltutors = "SELECT * FROM tbl_tutors WHERE tutor_id = '$search'";
+            }
+        }
+    }
 
     $results_per_page = 10;
     if (isset($_GET['pageno'])) {
@@ -14,6 +27,10 @@
     } else {
         $pageno = 1;
         $page_first_result = 0;
+    }
+
+    if(!isset($sqltutors)){
+        $sqltutors = "SELECT * FROM tbl_tutors";
     }
     
     $stmt = $conn->prepare($sqltutors);
@@ -25,6 +42,8 @@
     $stmt->execute();
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $rows = $stmt->fetchAll();
+
+    $conn= null;
 ?>
 
 <!DOCTYPE html>
@@ -43,15 +62,14 @@
     
     <body>
         <div class="w3-top">
-            <div class="w3-bar w3-white w3-card w3-padding" id="myNavbar">
-                <a href="courses.php" class="w3-bar-item w3-button w3-wide" style="font-family: Mr Dafoe; font-size:20px; font-weight:bold;">MY Tutor</a>
-                
+            <div class="w3-bar w3-card w3-black" id="myNavbar">
+                <img href="#home" class="w3-bar-item w3-button w3-left w3-hover-black" src="../images/logohome.png">
                 <div class="w3-right w3-hide-small">
-                <a href="courses.php" class="w3-bar-item w3-button w3-black w3-round-xlarge" style="margin-right:5px;"><i class="fa fa-graduation-cap"></i> Courses</a>
-                <a href="tutors.php" class="w3-bar-item w3-button w3-black w3-round-xlarge" style="margin-right:5px;"><i class="fa-solid fa-person-chalkboard"></i> Tutors</a>
-                <a href="#subs" class="w3-bar-item w3-button w3-black w3-round-xlarge" style="margin-right:5px;"><i class="fa-solid fa-list"></i> Subscription</a>
-                <a href="#profile" class="w3-bar-item w3-button w3-black w3-round-xlarge" style="margin-right:5px;"><i class="fa-solid fa-user"></i> Profile</a>
-                <a href="login.php" class="w3-bar-item w3-button w3-black w3-round-xlarge" style="margin-right:5px;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                <a href="courses.php" class="w3-bar-item w3-button w3-round-xlarge w3-hover-red" style="margin-right:5px; font-size: 12px"><i class="fa fa-graduation-cap"></i> Courses</a>
+                <a href="tutors.php" class="w3-bar-item w3-button w3-round-xlarge w3-hover-red" style="margin-right:5px; font-size: 12px"><i class="fa-solid fa-person-chalkboard"></i> Tutors</a>
+                <a href="#subs" class="w3-bar-item w3-button w3-round-xlarge w3-hover-red" style="margin-right:5px; font-size: 12px"><i class="fa-solid fa-list"></i> Subscription</a>
+                <a href="#profile" class="w3-bar-item w3-button w3-round-xlarge w3-hover-red" style="margin-right:5px; font-size: 12px"><i class="fa-solid fa-user"></i> Profile</a>
+                <a href="login.php" class="w3-bar-item w3-button w3-round-xlarge w3-hover-red" style="margin-right:5px; font-size: 12px"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                 </div>
 
                 <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
@@ -69,12 +87,38 @@
             <a href="login.php" onclick="w3_close()" class="w3-bar-item w3-button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a><hr>
         </nav><br>
 
-        <header class="backgroundtut">
-            <div class="w3-main w3-content w3-padding-32 w3-animate-bottom"><h1 class="header-texttut">TUTORS<hr class='linetut'></h1></div>
+        <header class="resimg-tut">
+            <div class="w3-main w3-content" style="display: flex; justify-content: center; margin-bottom:16px; padding-top:128px">
+                <h1 class="header-text-tut">TUTORS
+                    <hr class="header-line-tut">
+                    <p class="header-text2-tut">Looking for tutors suits with your study style? Explore available tutors here...</p>
+                </h1>
+            </div>
+
+            <div class="w3-card-4 w3-white w3-container w3-padding w3-margin w3-round-large" style="margin-bottom:64px">
+            <form>
+                <div class="w3-row">
+                    <div class="w3-half" style="padding-right:5px">
+                        <p><input class="w3-input w3-block w3-round-large w3-border" type="search" name="search" placeholder = "Search tutor here..">
+                        </p>
+                    </div>
+                    <div class="w3-half">
+                        <p>
+                            <select class="w3-input w3-block w3-round-large w3-border" name="option">
+                                <option value="tutname">By Tutor Name</option>
+                                <option value="tutid">By Tutor ID</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <button class="w3-button w3-right w3-black w3-round-large w3-hover-red" style="width:100%;transition: .4s;" type="submit" name="submit" value="search"><i class="fa-solid fa-search"></i>   Search</button></div>
+            </form>
+        </div>
+        <br>
         </header>
         <br>
-
-        <div class="w3-margin w3-grid-template-tut w3-animate-bottom">
+        <div class="w3-margin w3-grid-template-tut">
+            <a href="#home" class="float"><i class="fa fa-arrow-up my-float"></i></a>
             <?php
                 $i = 0;
                 foreach ($rows as $tutors) {
@@ -120,7 +164,7 @@
         ?>
         <br>
 
-        <footer class="footer w3-center">
+        <footer class="footer-tut w3-center">
             <p>Copyright &copy;2022 MY Tutor | Get serious, get tutor | Your use of this website constitutes acceptance of the Terms of Use, Privacy Policy and Cookie Policy. Do Not Sell My Personal Information </p>
         </footer>
 
